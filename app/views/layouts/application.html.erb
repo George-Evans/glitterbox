@@ -2,13 +2,21 @@
 <html>
   <head>
   <title>Glitterbox</title>
-    <%= csrf_meta_tags %>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="https://fast.fonts.net/cssapi/f935a532-7dca-4a2c-8c94-cedc41b5d56d.css" rel="stylesheet" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
   </head>
 
-  <body>
+  <body id="home-body">
 
   	<!-- // NAVAGATION -->
 
@@ -57,11 +65,11 @@
 	    		</div>
 		    	</li>
 		    <li class="socials">
-		    	<a href="https://www.facebook.com/glitterboxibiza/" target="_blank"><img src="img/transparent.png" id="fb"></a>
-		    	<a href="https://twitter.com/glitterbox" target="_blank"><img src="img/transparent.png" id="tw"></a>
-		    	<a href="https://www.instagram.com/glitterboxibiza" target="_blank"><img src="img/transparent.png" id="ig"></a>
-		    	<a href="https://soundcloud.com/glitterboxibiza" target="_blank"><img src="img/transparent.png" id="sc"></a>
-		    	<a href="https://www.youtube.com/user/glitterboxibiza" target="_blank"><img src="img/transparent.png" id="yt"></a>
+		    	<a href="https://www.facebook.com/glitterboxibiza/" target="_blank"><%= image_tag("transparent.png", id: "fb") %></a>
+		    	<a href="https://twitter.com/glitterbox" target="_blank"><%= image_tag("transparent.png", id: "tw") %></a>
+		    	<a href="https://www.instagram.com/glitterboxibiza" target="_blank"><%= image_tag("transparent.png", id: "ig") %></a>
+		    	<a href="https://soundcloud.com/glitterboxibiza" target="_blank"><%= image_tag("transparent.png", id: "sc") %></a>
+		    	<a href="https://www.youtube.com/user/glitterboxibiza" target="_blank"><%= image_tag("transparent.png", id: "yt") %></a>
 		    </li>
 		  </ul>  
 		</nav>
@@ -71,7 +79,7 @@
     <%= yield %>
 
     <footer class="footer">
-				<img src="img/gb_logo.svg"><span>&copy;</span> Glitterbox 2018
+				<%= image_tag("gb_logo.svg") %><span>&copy;</span> Glitterbox 2018
 		</footer>
 
   </body>
