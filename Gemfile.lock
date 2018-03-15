@@ -75,7 +75,7 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     nio4r (2.1.0)
-    nokogiri (~> 1.8.1)
+    nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
     puma (3.9.1)
     rack (2.0.4)
