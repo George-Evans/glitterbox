@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180528091047) do
+ActiveRecord::Schema.define(version: 20180528152136) do
 
   create_table "people", force: :cascade do |t|
     t.string "name"
     t.text "bio"
     t.integer "order"
-    t.string "img_url"
-    t.string "fb"
-    t.string "tw"
-    t.string "ig"
-    t.string "sc"
+    t.string "image_url"
+    t.string "facebook"
+    t.string "twitter"
+    t.string "instagram"
+    t.string "soundcloud"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "youtube"
   end
 
 end

@@ -1,6 +1,17 @@
-<h1>Editing Person</h1>
+<h1>Editing <%= @person.name %></h1>
 
-<%= render 'form', person: @person %>
+<div class="wrap">
+	<div class="container edit-form">
+		<%= render 'form', person: @person %>
+		<div class="row">
+	    <div class="col-xs-2"></div>
+	    <div class="col-xs-10">
+	      <%= link_to 'View', @person %> |
+	      <%= link_to 'Delete', @person, method: :delete, data: { confirm: 'Are you sure?' } %> | 
+				<%= link_to 'Back to List', people_path %>
+	    </div>
+	  </div>
+	</div>
+</div>
 
-<%= link_to 'Show', @person %> |
-<%= link_to 'Back', people_path %>
+

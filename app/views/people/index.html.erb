@@ -2,20 +2,7 @@
 
 <h1>People</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Bio</th>
-      <th>Order</th>
-      <th>Img url</th>
-      <th>Fb</th>
-      <th>Tw</th>
-      <th>Ig</th>
-      <th>Sc</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- <table>
 
   <tbody>
     <% @people.each do |person| %>
@@ -23,19 +10,38 @@
         <td><%= person.name %></td>
         <td><%= person.bio %></td>
         <td><%= person.order %></td>
-        <td><%= person.img_url %></td>
-        <td><%= person.fb %></td>
-        <td><%= person.tw %></td>
-        <td><%= person.ig %></td>
-        <td><%= person.sc %></td>
         <td><%= link_to 'Show', person %></td>
         <td><%= link_to 'Edit', edit_person_path(person) %></td>
         <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
-<br>
+<div class="wrap">
+  <div class="container">
+    <div class="row people">
 
-<%= link_to 'New Person', new_person_path %>
+      <% @people.each do |person| %>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 person">
+          <div class="artist-img">
+            <%= link_to image_tag(person.image_url, class: "img-responsive"), person %>
+            <span class="name"><%= person.name %></span>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 person">
+          <div class="artist-img">
+            <%= link_to image_tag("transparent.png", class: "img-responsive"), new_person_path %>
+            <span class="add"><span class="plus">+</span><br>New Person</span>
+          </div>
+        </div>
+
+    </div><!-- row // -->
+    
+  </div><!-- container // -->
+</div><!-- wrap // -->
+
+
+
