@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @single.title %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @single.artist %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @single.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @single.image_url %>
+</p>
+
+<p>
+  <strong>Cd buy url:</strong>
+  <%= @single.cd_buy_url %>
+</p>
+
+<p>
+  <strong>Cd button text url:</strong>
+  <%= @single.cd_button_text_url %>
+</p>
+
+<p>
+  <strong>Vinyl buy url:</strong>
+  <%= @single.vinyl_buy_url %>
+</p>
+
+<p>
+  <strong>Vinyl button text:</strong>
+  <%= @single.vinyl_button_text %>
+</p>
+
+<%= link_to 'Edit', edit_single_path(@single) %> |
+<%= link_to 'Back', singles_path %>

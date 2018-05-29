@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Radioshows</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Episode</th>
+      <th>Description</th>
+      <th>Image url</th>
+      <th>Listen url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @radioshows.each do |radioshow| %>
+      <tr>
+        <td><%= radioshow.title %></td>
+        <td><%= radioshow.episode %></td>
+        <td><%= radioshow.description %></td>
+        <td><%= radioshow.image_url %></td>
+        <td><%= radioshow.listen_url %></td>
+        <td><%= link_to 'Show', radioshow %></td>
+        <td><%= link_to 'Edit', edit_radioshow_path(radioshow) %></td>
+        <td><%= link_to 'Destroy', radioshow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Radioshow', new_radioshow_path %>

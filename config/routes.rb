@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :singles
+  resources :albums
+  resources :radioshows
   resources :people
   get 'simple_pages/index'
 

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @radioshow.title %>
+</p>
+
+<p>
+  <strong>Episode:</strong>
+  <%= @radioshow.episode %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @radioshow.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @radioshow.image_url %>
+</p>
+
+<p>
+  <strong>Listen url:</strong>
+  <%= @radioshow.listen_url %>
+</p>
+
+<%= link_to 'Edit', edit_radioshow_path(@radioshow) %> |
+<%= link_to 'Back', radioshows_path %>

@@ -1,0 +1,57 @@
+<%= form_with(model: single, local: true) do |form| %>
+  <% if single.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(single.errors.count, "error") %> prohibited this single from being saved:</h2>
+
+      <ul>
+      <% single.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :single_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :artist %>
+    <%= form.text_field :artist, id: :single_artist %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :single_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_url %>
+    <%= form.text_field :image_url, id: :single_image_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cd_buy_url %>
+    <%= form.text_field :cd_buy_url, id: :single_cd_buy_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cd_button_text_url %>
+    <%= form.text_field :cd_button_text_url, id: :single_cd_button_text_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vinyl_buy_url %>
+    <%= form.text_field :vinyl_buy_url, id: :single_vinyl_buy_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vinyl_button_text %>
+    <%= form.text_field :vinyl_button_text, id: :single_vinyl_button_text %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
