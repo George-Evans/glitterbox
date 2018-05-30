@@ -7,25 +7,78 @@
 	<div class="container radio-show">
 
 		<div class="row">
-			<div class="col-sm-12 col-md-6 music-img match"><img src="img/radio/045.jpg" class="img-responsive"></div>
+			<div class="col-sm-12 col-md-6 music-img match">
+				<%= image_tag(Radioshow.first.image_url, class: "img-responsive") %>
+			</div>
       <div class="col-sm-12 col-md-6 modal-info match">
-      	<h2>Glitterbox Podcast</h2>
-      	<h3>Hosted by Melvo Baptiste</h3>
-      	<h4>Episode 034 with Brian Tappart</h4>
-        <p>Melvo Baptiste hosts the weekly Glitterbox Radio Show, a place where we celebrate incredible dance music from across the decades. Each week, Melvo is joined by a guest who selects three of their all-time favourite records. You can expect Glitterbox residents, alongside house and disco legends. Never stop dancing.</p>
-        <div class="listen"><a href="https://soundcloud.com/glitterboxibiza/glitterbox-radio-show-045-w-brian-tappert" target="_blank"><button>Listen Now</button></a></div>
-        <p class="more-link"><a href="http://smarturl.it/glitterboxradio" target="_blank">More Episodes</a></p>
+      	<h2><%= Radioshow.first.title %></h2>
+      	<h3><%= Radioshow.first.episode %></h3>
+      	<h4>Hosted by Melvo Baptiste</h4>
+        <p><%= Radioshow.first.description %></p>
+        <button class="listen"><%= link_to "Listen Now", "https://soundcloud.com/glitterboxibiza/glitterbox-radio-show-045-w-brian-tappert"%></button>
+        <button class="listen"><%= link_to 'Edit', edit_radioshow_path(Radioshow.first) %></button>
+        
         <div class="socials music-socials mob-hide">
 					<h3>Follow Us</h3>
-					<a href="https://open.spotify.com/user/defected.records/playlist/5x1wgnYy9bbDhzRBpqSxq5" target="_blank"><img src="img/transparent.png" id="sp-b"></a>
+					<%= link_to image_tag("socials_sprite_blk.svg", class: "sp-b"), "https://open.spotify.com/user/defected.records/playlist/5x1wgnYy9bbDhzRBpqSxq5" %>
+					<!-- <a href="https://open.spotify.com/user/defected.records/playlist/5x1wgnYy9bbDhzRBpqSxq5" target="_blank"><img src="img/transparent.png" id="sp-b"></a>
 		    		<a href="https://itunes.apple.com/gb/playlist/glitterbox-disco-house-by-defected-records/pl.bc5b982882c845aeafae9a4a45066530?at=11lEW&ct=g2medp" target="_blank"><img src="img/transparent.png" id="am-b"></a>
 		    		<a href="https://soundcloud.com/glitterboxibiza" target="_blank"><img src="img/transparent.png" id="sc-b"></a>
-		    		<a href="https://www.youtube.com/user/glitterboxibiza" target="_blank"><img src="img/transparent.png" id="yt-b"></a>
+		    		<a href="https://www.youtube.com/user/glitterboxibiza" target="_blank"><img src="img/transparent.png" id="yt-b"></a> -->
 				</div>
 			</div>
 		</div>
 		
 	</div>
 	<!-- RADIO // -->
+
+	<!-- // ALBUMS -->
+
+	<div class="container singles">
+		<h2>Albums</h2>
+		<div class="row">
+
+			<% @albums.each do |album| %>
+				<div class="col-xs-12 col-sm-6 col-md-4 single match">
+					<%= link_to image_tag(album.image_url, class: "img-responsive"), album %>
+					<!-- <a href="#lightbox-albums" data-toggle="modal" data-slide-to="0"><img src="img/albums/loveinjection.jpg" class="img-responsive"></a> -->
+				</div>
+			<% end %>
+
+			<div class="col-xs-12 col-sm-6 col-md-4 single match">
+				<%= link_to image_tag("black.png", class: "img-responsive", style: "height:100%;"), new_album_path %>
+				<span class="add"><span class="plus">+</span><br>New Album</span>
+			</div>
+
+
+		</div><!-- row // -->
+	</div><!-- container // -->
+	<!-- ALBUMS // -->
+
+	<!-- // SINGLES -->
+
+	<div class="container singles">
+		<h2>Singles</h2>
+		<div class="row">
+
+			<% @singles.each do |single| %>
+				<div class="col-xs-6 col-md-4 col-lg-3 single match">
+					<%= link_to image_tag(single.image_url, class: "img-responsive"), single %>
+					<!-- <a href="#lightbox" data-toggle="modal" data-slide-to="0"><img src="img/singles/kathybrown.jpg" class="img-responsive"></a> -->
+				</div>
+			<% end %>
+
+			<div class="col-xs-6 col-md-4 col-lg-3 single match">
+				<%= link_to image_tag("black.png", class: "img-responsive", style: "height:100%;"), new_single_path %>
+				<span class="add"><span class="plus">+</span><br>New Single</span>
+			</div>
+
+		</div><!-- row // -->
+	</div><!-- container // -->
+
+	<!-- SINGLES // -->
 	
-</div>
+</div><!-- wrap // -->
+
+
+

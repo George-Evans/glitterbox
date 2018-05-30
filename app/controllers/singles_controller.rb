@@ -28,7 +28,7 @@ class SinglesController < ApplicationController
 
     respond_to do |format|
       if @single.save
-        format.html { redirect_to @single, notice: 'Single was successfully created.' }
+        format.html { redirect_to music_path, notice: 'Single was successfully created.' }
         format.json { render :show, status: :created, location: @single }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class SinglesController < ApplicationController
   def update
     respond_to do |format|
       if @single.update(single_params)
-        format.html { redirect_to @single, notice: 'Single was successfully updated.' }
+        format.html { redirect_to music_path, notice: 'Single was successfully updated.' }
         format.json { render :show, status: :ok, location: @single }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class SinglesController < ApplicationController
   def destroy
     @single.destroy
     respond_to do |format|
-      format.html { redirect_to singles_url, notice: 'Single was successfully destroyed.' }
+      format.html { redirect_to music_path, notice: 'Single was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class SinglesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def single_params
-      params.require(:single).permit(:title, :artist, :description, :image_url, :cd_buy_url, :cd_button_text_url, :vinyl_buy_url, :vinyl_button_text)
+      params.require(:single).permit(:title, :artist, :description, :image_url, :listen_url, :cd_buy_url, :cd_button_text_url, :vinyl_buy_url, :vinyl_button_text)
     end
 end

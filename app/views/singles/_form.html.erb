@@ -11,47 +11,49 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :single_title %>
+
+  <div class="field row">
+    <div class="col-xs-3"><%= form.label :title %>*</div>
+    <div class="col-xs-9"><%= form.text_field :title, id: :single_title %></div>
   </div>
 
-  <div class="field">
-    <%= form.label :artist %>
-    <%= form.text_field :artist, id: :single_artist %>
+  <div class="field row">
+    <div class="col-xs-3"><%= form.label :artist %>*</div>
+    <div class="col-xs-9"><%= form.text_field :artist, id: :single_artist %></div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :single_description %>
+  <div class="field row">
+    <div class="col-xs-3"><%= form.label :description %>*</div>
+    <div class="col-xs-9"><%= form.text_area :description, id: :single_description %></div>
   </div>
 
-  <div class="field">
-    <%= form.label :image_url %>
-    <%= form.text_field :image_url, id: :single_image_url %>
+  <div class="field row">
+    <div class="col-xs-3"><%= form.label :image_url %>*</div>
+    <div class="col-xs-9"><%= form.text_field :image_url, id: :single_image_url %></div>
   </div>
 
-  <div class="field">
-    <%= form.label :cd_buy_url %>
-    <%= form.text_field :cd_buy_url, id: :single_cd_buy_url %>
+  <div class="field row">
+    <div class="col-xs-3"><%= form.label :listen_url %></div>
+    <div class="col-xs-9"><%= form.text_field :listen_url, id: :single_listen_url %></div>
   </div>
 
-  <div class="field">
-    <%= form.label :cd_button_text_url %>
-    <%= form.text_field :cd_button_text_url, id: :single_cd_button_text_url %>
+  <div class="field row">
+    <div class="col-xs-3"><%= form.label :vinyl_buy_url %></div>
+    <div class="col-xs-9"><%= form.text_field :vinyl_buy_url, id: :single_vinyl_buy_url %></div>
   </div>
 
-  <div class="field">
-    <%= form.label :vinyl_buy_url %>
-    <%= form.text_field :vinyl_buy_url, id: :single_vinyl_buy_url %>
+  <div class="field row">
+    <div class="col-xs-3"><%= form.label :vinyl_button_text %></div>
+    <div class="col-xs-9"><%= form.select :vinyl_button_text, ["", "Buy Vinyl", "Pre-Order Vinyl"], id: :single_vinyl_buy_url %></div>
   </div>
 
-  <div class="field">
-    <%= form.label :vinyl_button_text %>
-    <%= form.text_field :vinyl_button_text, id: :single_vinyl_button_text %>
+  <div class="row">
+    <div class="col-xs-3"></div>
+    <div class="col-xs-9">
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

@@ -386,3 +386,7 @@
     });
 
 });
+
+    $(function($) {
+        $(".match").matchHeight();
+    });

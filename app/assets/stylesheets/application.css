@@ -42,7 +42,7 @@ body {
 }
 
 .wrap {
-  padding: 200px 0;
+  padding: 100px 0;
   background-color: #fff;
   color: #000;
 }
@@ -56,14 +56,20 @@ body {
 }
 
 button,
+.listen,
 .actions > input {
   border: 0;
-  color: #fff;
   background-color: #d10028;
-  padding: 5px 18px;
+  padding: 7px 18px;
   margin-right: 3px;
   margin-bottom: 3px;
   font-size: 1.2em;
+}
+
+button > a,
+.listen > a,
+.actions > input {
+  color: #fff;
 }
 
 button:hover,
@@ -85,7 +91,7 @@ button:hover,
 
 .edit-form {
 	text-align: left;
-	max-width: 660px !important;
+	max-width: 740px !important;
 	margin: 0 auto;
 }
 
@@ -95,9 +101,15 @@ button:hover,
 }
 
 .edit-form input,
-.edit-form textarea {
+.edit-form textarea,
+.edit-form select {
 	width: 100%;
 	padding: 8px;
+}
+
+.edit-form select {
+  height: 34px;
+  background-color: #fff;
 }
 
 .edit-form textarea {
