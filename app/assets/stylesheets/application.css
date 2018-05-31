@@ -70,6 +70,7 @@ button,
   font-size: 1.2em;
 }
 
+button,
 button > a,
 .listen > a,
 .actions > input {
@@ -77,8 +78,10 @@ button > a,
 }
 
 button:hover,
-.actions > input:hover {
+.actions > input:hover,
+button > a:hover {
   background-color: #000;
+  color: #fff;
 }
 
 .null:hover,
@@ -87,7 +90,8 @@ button:hover,
   box-shadow: 0;
 }
 
-.null button {
+.null button,
+button.null {
   background-color: #555;
 }
 
@@ -429,6 +433,7 @@ button:focus {
 
 .event button {
   margin-top: 15px;
+  margin-right: 2px;
 }
 
 .event img,

@@ -13,8 +13,16 @@ $(document).on("turbolinks:load", function() {
     });
 
     // lineupSubScript
-    $(".contains-test:contains('MELVO')").html(function(_, html){
-    	return html.replace(/MELVO/g, "<span class='red'>MELVO</span>");
+    $(".event:contains('DJ SET')").html(function(_, html){
+    	return html.replace(/DJ SET/g, "<span class='sub'>DJ SET</span>");
+    });
+
+    $(".event:contains('LIVE PA')").html(function(_, html){
+    	return html.replace(/LIVE PA/g, "<span class='sub'>LIVE PA</span>");
+    });
+
+    $(".event:contains('LIVE ON PERCUSSION')").html(function(_, html){
+    	return html.replace(/LIVE ON PERCUSSION/g, "<span class='sub'>LIVE ON PERCUSSION</span>");
     });
 
     //eventFormArtistsReveal
