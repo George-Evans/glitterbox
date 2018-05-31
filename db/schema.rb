@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180530172018) do
+ActiveRecord::Schema.define(version: 20180531135459) do
 
   create_table "albums", force: :cascade do |t|
     t.string "title"
@@ -21,6 +21,38 @@ ActiveRecord::Schema.define(version: 20180530172018) do
     t.string "cd_button_text"
     t.string "vinyl_buy_url"
     t.string "vinyl_button_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.date "date"
+    t.string "venue"
+    t.string "location"
+    t.string "event_name"
+    t.string "image_url"
+    t.string "artist_1"
+    t.string "artist_2"
+    t.string "artist_3"
+    t.string "artist_4"
+    t.string "artist_5"
+    t.string "artist_6"
+    t.string "artist_7"
+    t.string "artist_8"
+    t.string "artist_9"
+    t.string "artist_10"
+    t.string "artist_11"
+    t.string "artist_12"
+    t.string "artist_13"
+    t.string "artist_14"
+    t.string "artist_15"
+    t.string "artist_16"
+    t.string "artist_17"
+    t.string "artist_18"
+    t.string "artist_19"
+    t.string "artist_20"
+    t.string "ticket_url"
+    t.string "ticket_button_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

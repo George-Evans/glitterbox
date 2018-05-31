@@ -7,14 +7,14 @@
     <link href="https://fast.fonts.net/cssapi/f935a532-7dca-4a2c-8c94-cedc41b5d56d.css" rel="stylesheet" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <%= javascript_include_tag 'application', 'jquery.matchHeight', 'data-turbolinks-track': 'reload' %>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
 
     <link rel="icon" href="/assets/img/favicon.ico">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="turbolinks-visit-control" content="reload">
     <%= csrf_meta_tags %>
   </head>
 
@@ -34,8 +34,8 @@
 		  <ul>
 		    <li><%= link_to "Home", root_path %></li>
 		    <li><%= link_to "Events", root_path %></li>
-		    <li><%= link_to "Music", root_path %></li>
-		    <li><%= link_to "People", root_path %></li>
+		    <li><%= link_to "Music", music_path %></li>
+		    <li><%= link_to "People", people_path %></li>
 		    <li><a href="https://www.instagram.com/glitterboxibiza2017/" target="_blank">Gallery</a></li>
 		    <li><a href="https://store.defected.com/brands-labels/glitter-box.html" target="_blank">Store</a></li>
 		    <li>

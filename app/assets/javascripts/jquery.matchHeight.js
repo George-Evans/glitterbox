@@ -387,6 +387,4 @@
 
 });
 
-    $(function($) {
-        $(".match").matchHeight();
-    });
+    

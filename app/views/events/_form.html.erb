@@ -1,0 +1,158 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field row">
+    <div class="col-xs-3"><%= form.label :date %>*</div>
+    <div class="col-xs-9"><%= form.date_select :date, id: :event_date %></div>
+  </div>
+
+  <div class="field row">
+    <div class="col-xs-3"><%= form.label :venue %></div>
+    <div class="col-xs-9"><%= form.text_field :venue, id: :event_venue %></div>
+  </div>
+
+  <div class="field row">
+    <div class="col-xs-3"><%= form.label :location %></div>
+    <div class="col-xs-9"><%= form.text_field :location, id: :event_location %></div>
+  </div>
+
+  <div class="field row">
+    <div class="col-xs-3"><%= form.label :event_name %></div>
+    <div class="col-xs-9"><%= form.text_field :event_name, id: :event_event_name %></div>
+  </div>
+
+  <div class="field row">
+    <div class="col-xs-3"><%= form.label :image_url %></div>
+    <div class="col-xs-9"><%= form.text_field :image_url, id: :event_image_url %></div>
+  </div>
+
+  <div class="field row step">
+    <div class="col-xs-3"><%= form.label :artist_1, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_1, id: :event_artist_1 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_2, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_2, id: :event_artist_2 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_3, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_3, id: :event_artist_3 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_4, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_4, id: :event_artist_4 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_5, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_5, id: :event_artist_5 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_6, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_6, id: :event_artist_6 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_7, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_7, id: :event_artist_7 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_8, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_8, id: :event_artist_8 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_9, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_9, id: :event_artist_9 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_10, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_10, id: :event_artist_10 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_11, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_11, id: :event_artist_11 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_12, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_12, id: :event_artist_12 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_13, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_13, id: :event_artist_13 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_14, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_14, id: :event_artist_14 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_15, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_15, id: :event_artist_15 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_16, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_16, id: :event_artist_16 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_17, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_17, id: :event_artist_17 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_18, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_18, id: :event_artist_18 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_19, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_19, id: :event_artist_19 %></div>
+  </div>
+
+  <div class="field row step hide">
+    <div class="col-xs-3"><%= form.label :artist_20, "Artist" %></div>
+    <div class="col-xs-9"><%= form.text_field :artist_20, id: :event_artist_20 %></div>
+  </div>
+
+  <div class="field row">
+    <div class="col-xs-3"><%= form.label :ticket_url %></div>
+    <div class="col-xs-9"><%= form.text_field :ticket_url, id: :event_ticket_url %></div>
+  </div>
+
+  <div class="field row">
+    <div class="col-xs-3"><%= form.label :ticket_button_text %></div>
+    <div class="col-xs-9"><%= form.text_field :ticket_button_text, id: :event_ticket_button_text %></div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-3"></div>
+    <div class="col-xs-9">
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    </div>
+  </div>
+
+<% end %>

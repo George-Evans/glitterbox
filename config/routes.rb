@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   resources :singles
   resources :albums
   resources :radioshows

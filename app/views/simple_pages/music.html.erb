@@ -10,11 +10,11 @@
 			<div class="col-sm-12 col-md-6 music-img match">
 				<%= image_tag(Radioshow.first.image_url, class: "img-responsive") %>
 			</div>
-      <div class="col-sm-12 col-md-6 modal-info match">
+      <div class="col-sm-12 col-md-6 modal-info match" id="radio_match">
       	<h2><%= Radioshow.first.title %></h2>
       	<h3><%= Radioshow.first.episode %></h3>
       	<h4>Hosted by Melvo Baptiste</h4>
-        <p><%= Radioshow.first.description %></p>
+        <p class="contains-test"><%= Radioshow.first.description %></p>
         <button class="listen"><%= link_to "Listen Now", "https://soundcloud.com/glitterboxibiza/glitterbox-radio-show-045-w-brian-tappert"%></button>
         <button class="listen"><%= link_to 'Edit', edit_radioshow_path(Radioshow.first) %></button>
         
