@@ -168,7 +168,7 @@ a:focus {
 
 .hero-img {
   height: 80%;
-  background: url(../img/home.jpg);
+  background: url(home.jpg);
   background-attachment: scroll;
   background-position: center;
   background-size: cover;
