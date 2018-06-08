@@ -141,6 +141,7 @@ select#event_date_3i {
 	padding: 60px 30px 0px;
 	max-width: 970px;
   font-size: 1.8em;
+  line-height: 1.2em;
 }
 
 a:focus {
@@ -167,8 +168,8 @@ a:focus {
 }
 
 .hero-img {
-  height: 80%;
-  background: url(home.jpg);
+  height: 80vh;
+  background-image: image-url("home.jpg");
   background-attachment: scroll;
   background-position: center;
   background-size: cover;
