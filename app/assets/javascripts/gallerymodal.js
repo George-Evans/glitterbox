@@ -1,5 +1,5 @@
 /* copy loaded thumbnails into carousel */
-$('.row .thumbnail').on('load', function() {
+$('.row .thumbnail').on("turbolinks:load", function($) {
   
 }).each(function(i) {
   if(this.complete) {

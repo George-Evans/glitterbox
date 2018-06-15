@@ -1,28 +1,78 @@
 <p id="notice"><%= notice %></p>
 
-<h1>People</h1>
+<div class="header">
+  <h1>People</h1>
+</div>
+
 
 <div class="wrap">
   <div class="container">
     <div class="row people">
 
-      <% @people.each do |person| %>
+      <% @people.each_with_index do |person, index| %>
+
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 person">
           <div class="artist-img">
-            <%= link_to image_tag(person.image_url, class: "img-responsive"), person %>
+            <%= link_to image_tag(person.image_url, class: "img-responsive"), "#lightbox", data: { toggle: "modal", slide_to: index} %>
             <span class="name"><%= person.name %></span>
           </div>
         </div>
+
       <% end %>
 
       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 person">
-          <div class="artist-img">
-            <%= link_to image_tag("transparent.png", class: "img-responsive"), new_person_path %>
-            <span class="add"><span class="plus">+</span><br>New Person</span>
-          </div>
+        <div class="artist-img">
+          <%= link_to image_tag("black.png", class: "img-responsive"), new_person_path %>
+          <span class="add"><span class="plus">+</span><br>New Person</span>
         </div>
+      </div>
 
     </div><!-- row // -->
+
+    <!-- // modal carousel -->
+    <div class="modal fade and carousel slide" id="lightbox">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="carousel-inner" id="people-modals">
+
+
+              <% @people.each do |person| %>
+              <!-- // PERSON BLOCK -->
+              <div class="item <%= " active" if person == @people.first %>">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6  modal-img"><%= image_tag(person.image_url, class: "img-responsive") %></div>
+                  <div class="col-sm-12 col-md-6 modal-info">
+                    <h2><%= person.name %></h2>
+                    <p><%= simple_format(person.bio) %></p>
+                    <div class="socials">
+                      <% if person.facebook != "" %><%= link_to image_tag("socials/fb_blk.svg"), person.facebook %><% end %>
+                      <% if person.twitter != "" %><%= link_to image_tag("socials/tw_blk.svg"), person.twitter %><% end %>
+                      <% if person.instagram != "" %><%= link_to image_tag("socials/ig_blk.svg"), person.instagram %><% end %>
+                      <% if person.soundcloud != "" %><%= link_to image_tag("socials/sc_blk.svg"), person.soundcloud %><% end %>
+                      <% if person.youtube != "" %><%= link_to image_tag("socials/yt_blk.svg"), person.youtube %><% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- PERSON BLOCK // -->
+              <% end %>
+
+            </div><!-- /.carousel-inner -->
+            <a class="left carousel-control" href="#lightbox" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-triangle-left"></span>
+            </a>
+            <a class="right carousel-control" href="#lightbox" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-triangle-right"></span>
+            </a>
+          </div><!-- /.modal-body -->
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- modal carousel -->
     
   </div><!-- container // -->
 </div><!-- wrap // -->

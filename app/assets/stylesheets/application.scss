@@ -10,10 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 body {
   color: #000;
@@ -46,7 +46,7 @@ body {
 }
 
 .wrap {
-  padding: 100px 0;
+  padding: 200px 0;
   background-color: #fff;
   color: #000;
 }
@@ -238,7 +238,7 @@ body input ~ nav {
   width: 100%;
   height: 1px;
   margin-top: -1px;
-  z-index: 3;
+  z-index: 4;
   transition: 0.5s;
   transition-delay: 0.5s;
   overflow: hidden;
@@ -286,82 +286,13 @@ body input:checked ~ nav > ul > li {
 	margin-top: 40px;
 }
 
-.socials > a:hover {
-	box-shadow: none;
-}
-
-#fb,
-#tw,
-#ig,
-#sc,
-#yt {
-  background: url(../img/socials_sprite.svg) 0 0;
-}
-
-#fb-b,
-#tw-b,
-#ig-b {
-  background: url(../img/socials_sprite_blk2.svg) 0 0;
-}
-
-#am-b,
-#sp-b,
-#yt-b,
-#sc-b {
-  background: url(../img/socials_sprite_blk.svg) 0 0;
-}
-
-#fb,
-#tw,
-#ig,
-#sc,
-#yt,
-#fb-b,
-#tw-b,
-#ig-b,
-#sp-b,
-#am-b,
-#yt-b,
-#sc-b {
+.socials img {
   height: 44px;
-  background-size: 330px;
   margin: 0 2px;
 }
 
-#fb,
-#fb-b,
-#sp-b {
-	width: 44px;
-	background-position: -5px 0;
-}
-
-#tw,
-#tw-b {
-	width: 44px;
-	background-position: -68px 0;
-}
-
-#am-b {
-  width: 115px;
-  background-position: -62px 0;
-}
-
-#ig,
-#ig-b {
-	width: 44px;
-	background-position: -130px 0;
-}
-
-#sc,
-#sc-b {
-	width: 72px;
-	background-position: -192px 0;
-}
-
-#yt,
-#yt-b {
-	width: 44px;
-	background-position: -282px 0;
+.socials > a:hover {
+	box-shadow: none;
 }
 
 /*SUBSCRIBE FORM*/
@@ -968,41 +899,10 @@ h4 {
 			box-shadow: none;
 		}
 
-		#fb,
-		#tw,
-		#ig,
-		#sc,
-		#yt {
-			height: 22px;
-			background: url(../img/socials_sprite.svg) 0 0;
-			background-size: 163px;
-			margin: 0 1px;
-		}
-
-		#fb {
-			width: 22px;
-			background-position: 0;
-		}
-
-		#tw {
-			width: 22px;
-			background-position: -32px 0;
-		}
-
-		#ig {
-			width: 22px;
-			background-position: -64px 0;
-		}
-
-		#sc {
-			width: 36px;
-			background-position: -259px 0;
-		}
-
-		#yt {
-			width: 22px;
-			background-position: -304px 0;
-		}
+    .socials img {
+      height: 28px;
+      margin: 0 1px;
+    }
 
 		body input + label {
 		  top: 20px;
@@ -1059,21 +959,6 @@ h4 {
 
 	#mc_embed_signup {
 		font-size: 1.6em;
-	}
-
-	#fb,
-	#tw,
-	#ig,
-	#sc,
-	#yt,
-	#fb-b,
-	#tw-b,
-	#ig-b,
-	#sp-b,
-	#am-b,
-	#yt-b,
-	#sc-b {
-		margin: 0;
 	}
 
 

@@ -1,4 +1,6 @@
-<h1>Music</h1>
+<div class="header">
+  <h1>Music</h1>
+</div>
 
 <div class="wrap">
   
@@ -14,17 +16,16 @@
       	<h2><%= Radioshow.first.title %></h2>
       	<h3><%= Radioshow.first.episode %></h3>
       	<h4>Hosted by Melvo Baptiste</h4>
-        <p class="contains-test"><%= Radioshow.first.description %></p>
+        <p class="contains-test"><%= simple_format(Radioshow.first.description) %></p>
         <button class="listen"><%= link_to "Listen Now", "https://soundcloud.com/glitterboxibiza/glitterbox-radio-show-045-w-brian-tappert"%></button>
         <button class="listen"><%= link_to 'Edit', edit_radioshow_path(Radioshow.first) %></button>
         
         <div class="socials music-socials mob-hide">
 					<h3>Follow Us</h3>
-					<%= link_to image_tag("socials_sprite_blk.svg", class: "sp-b"), "https://open.spotify.com/user/defected.records/playlist/5x1wgnYy9bbDhzRBpqSxq5" %>
-					<!-- <a href="https://open.spotify.com/user/defected.records/playlist/5x1wgnYy9bbDhzRBpqSxq5" target="_blank"><img src="img/transparent.png" id="sp-b"></a>
-		    		<a href="https://itunes.apple.com/gb/playlist/glitterbox-disco-house-by-defected-records/pl.bc5b982882c845aeafae9a4a45066530?at=11lEW&ct=g2medp" target="_blank"><img src="img/transparent.png" id="am-b"></a>
-		    		<a href="https://soundcloud.com/glitterboxibiza" target="_blank"><img src="img/transparent.png" id="sc-b"></a>
-		    		<a href="https://www.youtube.com/user/glitterboxibiza" target="_blank"><img src="img/transparent.png" id="yt-b"></a> -->
+            <%= link_to image_tag("socials/sp_blk.svg"), "https://open.spotify.com/user/defected.records/playlist/5x1wgnYy9bbDhzRBpqSxq5" %>
+			    	<%= link_to image_tag("socials/ap_blk.svg"), "https://itunes.apple.com/gb/playlist/glitterbox-disco-house-by-defected-records/pl.bc5b982882c845aeafae9a4a45066530?at=11lEW&ct=g2medp" %>
+			    	<%= link_to image_tag("socials/sc_blk.svg"), "https://soundcloud.com/glitterboxibiza" %>
+			    	<%= link_to image_tag("socials/yt_blk.svg"), "https://www.youtube.com/user/glitterboxibiza" %>
 				</div>
 			</div>
 		</div>
@@ -36,12 +37,13 @@
 
 	<div class="container singles">
 		<h2>Albums</h2>
+
+		<!-- // Thumbnails -->
 		<div class="row">
 
-			<% @albums.each do |album| %>
+			<% @albums.each_with_index do |album, index| %>
 				<div class="col-xs-12 col-sm-6 col-md-4 single match">
-					<%= link_to image_tag(album.image_url, class: "img-responsive"), album %>
-					<!-- <a href="#lightbox-albums" data-toggle="modal" data-slide-to="0"><img src="img/albums/loveinjection.jpg" class="img-responsive"></a> -->
+					<%= link_to image_tag(album.image_url, class: "img-responsive"), "#lightbox", data: { toggle: "modal", slide_to: index} %>
 				</div>
 			<% end %>
 
@@ -52,6 +54,61 @@
 
 
 		</div><!-- row // -->
+		<!-- Thumbnails // -->
+
+		<!-- // modal carousel -->
+    <div class="modal fade and carousel slide" id="lightbox">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="carousel-inner" id="people-modals">
+
+
+              <% @albums.each do |album| %>
+              <!-- // ALBUM BLOCK -->
+              <div class="item <%= " active" if album == @albums.first %>">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6  modal-img"><%= image_tag(album.image_url, class: "img-responsive") %></div>
+                  <div class="col-sm-12 col-md-6 modal-info">
+                    <h2><%= album.title %></h2>
+                      <p><%= simple_format(album.description) %></p>
+				              <div class="buy-links">
+						            <% if album.listen_url != "" %>
+						              <button><%= link_to "Listen", album.listen_url %></button>
+						            <% end %>
+						            <% if album.cd_buy_url != "" %>
+						              <button><%= link_to album.cd_button_text, album.cd_buy_url %></button>
+						            <% end %>
+						            <% if album.vinyl_buy_url != "" %>
+						              <button><%= link_to album.vinyl_button_text, album.vinyl_buy_url %></button>
+						            <% end %>
+						            <button><%= link_to 'Edit', edit_album_path(album) %></button>
+						            <button><%= link_to 'Delete', album, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+						          </div>               
+                  </div>
+                </div>
+              </div>
+              <!-- ALBUM BLOCK // -->
+              <% end %>
+
+            </div><!-- /.carousel-inner -->
+            <a class="left carousel-control" href="#lightbox" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-triangle-left"></span>
+            </a>
+            <a class="right carousel-control" href="#lightbox" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-triangle-right"></span>
+            </a>
+          </div><!-- /.modal-body -->
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- modal carousel -->
+
+
+
 	</div><!-- container // -->
 	<!-- ALBUMS // -->
 
@@ -59,12 +116,13 @@
 
 	<div class="container singles">
 		<h2>Singles</h2>
+
+		<!-- // Thumbnails -->
 		<div class="row">
 
-			<% @singles.each do |single| %>
+			<% @singles.each_with_index do |single, index| %>
 				<div class="col-xs-6 col-md-4 col-lg-3 single match">
-					<%= link_to image_tag(single.image_url, class: "img-responsive"), single %>
-					<!-- <a href="#lightbox" data-toggle="modal" data-slide-to="0"><img src="img/singles/kathybrown.jpg" class="img-responsive"></a> -->
+					<%= link_to image_tag(single.image_url, class: "img-responsive"), "#lightbox-singles", data: { toggle: "modal", slide_to: index} %>
 				</div>
 			<% end %>
 
@@ -74,6 +132,57 @@
 			</div>
 
 		</div><!-- row // -->
+		<!-- Thumbnails // -->
+
+		<!-- // modal carousel -->
+    <div class="modal fade and carousel slide" id="lightbox-singles">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="carousel-inner" id="people-modals">
+
+
+              <% @singles.each do |single| %>
+              <!-- // ALBUM BLOCK -->
+              <div class="item <%= " active" if single == @singles.first %>">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6  modal-img"><%= image_tag(single.image_url, class: "img-responsive") %></div>
+                  <div class="col-sm-12 col-md-6 modal-info">
+                    <h2><%= single.artist %></h2>
+                    <h3><%= single.title %></h3>
+                    <p><%= simple_format(single.description) %></p>
+			              <div class="buy-links">
+					            <% if single.listen_url != "" %>
+					              <button><%= link_to "Listen", single.listen_url %></button>
+					            <% end %>
+					            <% if single.vinyl_buy_url != "" %>
+					              <button><%= link_to single.vinyl_button_text, single.vinyl_buy_url %></button>
+					            <% end %>
+					            <button><%= link_to 'Edit', edit_single_path(single) %></button>
+					            <button><%= link_to 'Delete', single, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+					          </div>               
+                  </div>
+                </div>
+              </div>
+              <!-- ALBUM BLOCK // -->
+              <% end %>
+
+            </div><!-- /.carousel-inner -->
+            <a class="left carousel-control" href="#lightbox-singles" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-triangle-left"></span>
+            </a>
+            <a class="right carousel-control" href="#lightbox-singles" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-triangle-right"></span>
+            </a>
+          </div><!-- /.modal-body -->
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- modal carousel -->
+
 	</div><!-- container // -->
 
 	<!-- SINGLES // -->
