@@ -28,7 +28,7 @@ class RadioshowsController < ApplicationController
 
     respond_to do |format|
       if @radioshow.save
-        format.html { redirect_to @radioshow, notice: 'Radioshow was successfully created.' }
+        format.html { redirect_to music_path, notice: 'Radioshow was successfully created.' }
         format.json { render :show, status: :created, location: @radioshow }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class RadioshowsController < ApplicationController
   def update
     respond_to do |format|
       if @radioshow.update(radioshow_params)
-        format.html { redirect_to @radioshow, notice: 'Radioshow was successfully updated.' }
+        format.html { redirect_to music_path, notice: 'Radioshow was successfully updated.' }
         format.json { render :show, status: :ok, location: @radioshow }
       else
         format.html { render :edit }

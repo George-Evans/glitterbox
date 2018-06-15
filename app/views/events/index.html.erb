@@ -13,37 +13,37 @@
         <div class="col-xs-6 col-md-4 col-lg-3 event match">
           <%= image_tag(event.image_url, class: "img-responsive") %>
           <h2>
-            <% if event.event_name != "" %><%= event.event_name %><br><% end %>
-            <% if event.venue != "" %><%= event.venue %><% end %>
-            <% if event.venue != "" && event.location != "" %>, <% end %>
-            <% if event.location != "" %><%= event.location %><% end %>
-            <% if event.venue != "" || event.location != "" %><br><% end %>
+            <% if event.event_name? %><%= event.event_name %><br><% end %>
+            <%= event.venue if event.venue? %>
+            <% if event.venue? && event.location? %>, <% end %>
+            <%= event.location if event.location? %>
+            <% if event.venue? || event.location? %><br><% end %>
             <p><%= event.date.strftime("%A %d %B") %></p>
           </h2>
           <ul>
             <li><%= event.artist_1.upcase %></li>
-            <% if event.artist_2 != "" %><li><%= event.artist_2.upcase %></li><% end %>
-            <% if event.artist_3 != "" %><li><%= event.artist_3.upcase %></li><% end %>
-            <% if event.artist_4 != "" %><li><%= event.artist_4.upcase %></li><% end %>
-            <% if event.artist_5 != "" %><li><%= event.artist_5.upcase %></li><% end %>
-            <% if event.artist_6 != "" %><li><%= event.artist_6.upcase %></li><% end %>
-            <% if event.artist_7 != "" %><li><%= event.artist_7.upcase %></li><% end %>
-            <% if event.artist_8 != "" %><li><%= event.artist_8.upcase %></li><% end %>
-            <% if event.artist_9 != "" %><li><%= event.artist_9.upcase %></li><% end %>
-            <% if event.artist_10 != "" %><li><%= event.artist_10.upcase %></li><% end %>
-            <% if event.artist_11 != "" %><li><%= event.artist_11.upcase %></li><% end %>
-            <% if event.artist_12 != "" %><li><%= event.artist_12.upcase %></li><% end %>
-            <% if event.artist_13 != "" %><li><%= event.artist_13.upcase %></li><% end %>
-            <% if event.artist_14 != "" %><li><%= event.artist_14.upcase %></li><% end %>
-            <% if event.artist_15 != "" %><li><%= event.artist_15.upcase %></li><% end %>
-            <% if event.artist_16 != "" %><li><%= event.artist_16.upcase %></li><% end %>
-            <% if event.artist_17 != "" %><li><%= event.artist_17.upcase %></li><% end %>
-            <% if event.artist_18 != "" %><li><%= event.artist_18.upcase %></li><% end %>
-            <% if event.artist_19 != "" %><li><%= event.artist_19.upcase %></li><% end %>
-            <% if event.artist_20 != "" %><li><%= event.artist_20.upcase %></li><% end %>
+            <% if event.artist_2? %><li><%= event.artist_2.upcase %></li><% end %>
+            <% if event.artist_3? %><li><%= event.artist_3.upcase %></li><% end %>
+            <% if event.artist_4? %><li><%= event.artist_4.upcase %></li><% end %>
+            <% if event.artist_5? %><li><%= event.artist_5.upcase %></li><% end %>
+            <% if event.artist_6? %><li><%= event.artist_6.upcase %></li><% end %>
+            <% if event.artist_7? %><li><%= event.artist_7.upcase %></li><% end %>
+            <% if event.artist_8? %><li><%= event.artist_8.upcase %></li><% end %>
+            <% if event.artist_9? %><li><%= event.artist_9.upcase %></li><% end %>
+            <% if event.artist_10? %><li><%= event.artist_10.upcase %></li><% end %>
+            <% if event.artist_11? %><li><%= event.artist_11.upcase %></li><% end %>
+            <% if event.artist_12? %><li><%= event.artist_12.upcase %></li><% end %>
+            <% if event.artist_13? %><li><%= event.artist_13.upcase %></li><% end %>
+            <% if event.artist_14? %><li><%= event.artist_14.upcase %></li><% end %>
+            <% if event.artist_15? %><li><%= event.artist_15.upcase %></li><% end %>
+            <% if event.artist_16? %><li><%= event.artist_16.upcase %></li><% end %>
+            <% if event.artist_17? %><li><%= event.artist_17.upcase %></li><% end %>
+            <% if event.artist_18? %><li><%= event.artist_18.upcase %></li><% end %>
+            <% if event.artist_19? %><li><%= event.artist_19.upcase %></li><% end %>
+            <% if event.artist_20? %><li><%= event.artist_20.upcase %></li><% end %>
           </ul>
           <div class="tickets">
-            <% if event.ticket_url != "" %>
+            <% if event.ticket_url? %>
               <button><%= link_to event.ticket_button_text, event.ticket_url %></button>
             <% else %>
               <button class="null"><%= event.ticket_button_text %></button>
