@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 #User webpacker
-gem 'webpacker', '~> 3.5'
+# gem 'webpacker', '~> 3.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
