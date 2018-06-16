@@ -6,23 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Person.create(
-	name:'Basement Jaxx', 
-	bio:'First performing for Glitterbox in 2015, Simon Ratcliffe and Felix Buxton started life as underground producers and party promoters in 1995, putting out their first tracks on shrink-wrapped vinyl and throwing hush-hush raves in abandoned South London pizza joints. Almost a quarter of a century later, the double BRIT Award winners (Best Dance Act) have taken the sound of London to the world, also receiving a Grammy for their third album Kish Kash and continuing to produce quality releases on their own label, Atlantic Jaxx Recordings.', 
-	order:'1', 
-	image_url:'people/basementjaxx.jpg', 
-	facebook:'https://www.facebook.com/BasementJaxx', 
-	twitter:'http://twitter.com/TheBasementJaxx', 
-	instagram:'', 
-	soundcloud:'https://soundcloud.com/basement-jaxx', 
-	youtube:'http://www.youtube.com/officialbasementjaxx'
-	)
 
 Person.create(
 	name:'Masters At Work', 
 	bio:'There are few names in dance music today which need less of an introduction than Masters At Work. The duo of Louie Vega and Kenny Dope have forged a reputation for genre-eschewing DJ sets and flawless house productions during careers which have spanned three decades. Their sound was born out of New York when Disco was at its peak, seeing the emergence of house and hip-hop in their home city, the pair managed to amalgamate that mix along with a healthy dollop of Latin styles and jazz to create records that are still being copied and referenced – but crucially never eclipsed – by many of today’s contemporary producers.', 
 	order:'5', 
-	image_url:'people/maw,jpg', 
+	image_url:'', 
 	facebook:'https://www.facebook.com/MastersAtWorkOfficial/', 
 	twitter:'', 
 	instagram:'', 

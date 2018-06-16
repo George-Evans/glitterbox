@@ -4,12 +4,13 @@ class SinglesController < ApplicationController
   # GET /singles
   # GET /singles.json
   def index
-    @singles = Single.all
+    redirect_to music_path
   end
 
   # GET /singles/1
   # GET /singles/1.json
   def show
+    redirect_to music_path
   end
 
   # GET /singles/new

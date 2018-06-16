@@ -55,6 +55,9 @@
                       <% if person.soundcloud != "" %><%= link_to image_tag("socials/sc_blk.svg"), person.soundcloud %><% end %>
                       <% if person.youtube != "" %><%= link_to image_tag("socials/yt_blk.svg"), person.youtube %><% end %>
                     </div>
+                    <br>
+                    <button><%= link_to 'Edit', edit_person_path(person) %></button>
+                    <button><%= link_to 'Delete', person, method: :delete, data: { confirm: 'Are you sure?' } %></button>
                   </div>
                 </div>
               </div>

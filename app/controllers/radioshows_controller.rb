@@ -4,12 +4,13 @@ class RadioshowsController < ApplicationController
   # GET /radioshows
   # GET /radioshows.json
   def index
-    @radioshows = Radioshow.all
+    redirect_to music_path
   end
 
   # GET /radioshows/1
   # GET /radioshows/1.json
   def show
+    redirect_to music_path
   end
 
   # GET /radioshows/new
