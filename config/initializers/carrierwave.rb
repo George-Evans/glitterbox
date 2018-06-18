@@ -11,10 +11,5 @@ if Rails.env.production?
     config.cache_dir = 'files'
     config.permissions = 0777
     config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
-    config.storage = :fog
-  end
-else
-  CarrierWave.configure do |config|
-    config.storage :file
   end
 end
