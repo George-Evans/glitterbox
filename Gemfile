@@ -42,9 +42,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use carrierwave image uploader
 gem 'carrierwave', '~> 1.0'
-
 # Use minimagick for image resizing
 gem 'mini_magick'
+#Use AWS fog for file storage
+gem 'fog-aws'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
