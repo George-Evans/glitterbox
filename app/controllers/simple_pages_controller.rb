@@ -3,7 +3,7 @@ class SimplePagesController < ApplicationController
   end
 
   def music
-  	@albums = Album.all.reverse
-  	@singles = Single.all.reverse
+  	@albums = Album.order(:created_at).reverse
+  	@singles = Single.order(:created_at).reverse
   end
 end
