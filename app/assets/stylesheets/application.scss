@@ -142,6 +142,7 @@ select#event_date_3i {
 	max-width: 970px;
   font-size: 1.8em;
   line-height: 1.2em;
+  position: relative;
 }
 
 a:focus {
@@ -163,13 +164,11 @@ a:focus {
 	-ms-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translate(-50%,-50%);
 	transform: translate(-50%, -50%);
-	mix-blend-mode: screen;
   max-width: 1200px;
 }
 
 .hero-img {
   height: 80vh;
-  background-image: image-url("home.jpg");
   background-attachment: scroll;
   background-position: center;
   background-size: cover;

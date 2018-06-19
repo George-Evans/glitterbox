@@ -11,17 +11,34 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :text %>
-    <%= form.text_area :text, id: :home_text %>
+
+  <div class="field row">
+    <div class="col-xs-4"><%= form.label :overlay_image_url %></div>
+    <div class="col-xs-8"><%= form.file_field :overlay_image_url, id: :home_overlay_image_url %></div>
   </div>
 
-  <div class="field">
-    <%= form.label :image_url %>
-    <%= form.file_field :image_url, id: :home_image_url %>
+  <div class="field row">
+    <div class="col-xs-4"><%= form.label :overlay_image_blend_mode %></div>
+    <div class="col-xs-8"><%= form.select :overlay_image_blend_mode, ["normal", "screen"], id: :home_overlay_image_blend_mode %></div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="field row">
+    <div class="col-xs-4"><%= form.label :background_image_url %></div>
+    <div class="col-xs-8"><%= form.file_field :background_image_url, id: :home_background_image_url %></div>
   </div>
+
+  <div class="field row">
+    <div class="col-xs-4"><%= form.label :text %></div>
+    <div class="col-xs-8"><%= form.text_area :text, id: :home_text %></div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-8">
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    </div>
+  </div>
+
 <% end %>

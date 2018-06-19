@@ -1,9 +1,10 @@
-<div class="container-fluid hero-img">
-	<%= image_tag("gb_neon.jpg", class: "img-responsive video-overlay") %>
+<div class="container-fluid hero-img" style="background-image: url(<%= Home.first.background_image_url %>);">
+	<%= image_tag(Home.first.overlay_image_url, class: "img-responsive video-overlay", style: "mix-blend-mode: " + Home.first.overlay_image_blend_mode + ";") %>
 </div>
 
 <div class="container blurb">
-	<p>"Someday, we'll all live as one family in perfect harmony"</p>
+	<p><%= Home.first.text %></p>
+	<button class="listen"><%= link_to 'Edit', edit_home_path(Home.first) %></button>
 </div>
 
 <!-- <div class="container-fluid hero-img">
