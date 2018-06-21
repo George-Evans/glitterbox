@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :skip => [:registrations], path: '', path_names: { sign_in: "admin", sign_out: "logout"}
+  devise_for :users, path: '', path_names: { sign_in: "admin", sign_out: "logout"}
   resources :users
   resources :homes
   resources :events
@@ -12,8 +12,6 @@ Rails.application.routes.draw do
   root "simple_pages#index"
 
   get "/music", to: "simple_pages#music"
-
-  get "/sign_up" => redirect("/")
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
