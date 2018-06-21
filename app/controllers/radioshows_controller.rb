@@ -1,5 +1,6 @@
 class RadioshowsController < ApplicationController
   before_action :set_radioshow, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /radioshows
   # GET /radioshows.json

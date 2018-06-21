@@ -4,7 +4,10 @@
 
 <div class="container blurb">
 	<p><%= Home.first.text %></p>
-	<button class="listen"><%= link_to 'Edit', edit_home_path(Home.first) %></button>
+	
+	<% if user_signed_in? %>
+		<button class="listen"><%= link_to 'Edit', edit_home_path(Home.first) %></button>
+	<% end %>
 </div>
 
 <!-- <div class="container-fluid hero-img">

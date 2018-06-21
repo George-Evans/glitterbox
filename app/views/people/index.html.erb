@@ -10,22 +10,22 @@
     <div class="row people">
 
       <% @people.each_with_index do |person, index| %>
-
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 person">
           <div class="artist-img">
             <%= link_to image_tag(person.image_url, class: "img-responsive"), "#lightbox", data: { toggle: "modal", slide_to: index} %>
             <span class="name"><%= person.name %></span>
           </div>
         </div>
-
       <% end %>
 
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 person">
-        <div class="artist-img">
-          <%= link_to image_tag("black.png", class: "img-responsive"), new_person_path %>
-          <span class="add"><span class="plus">+</span><br>New Person</span>
+      <% if user_signed_in? %>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 person">
+          <div class="artist-img">
+            <%= link_to image_tag("black.png", class: "img-responsive"), new_person_path %>
+            <span class="add"><span class="plus">+</span><br>New Person</span>
+          </div>
         </div>
-      </div>
+      <% end %>
 
     </div><!-- row // -->
 
@@ -56,8 +56,11 @@
                       <% if person.youtube != "" %><%= link_to image_tag("socials/yt_blk.svg"), person.youtube %><% end %>
                     </div>
                     <br>
-                    <button><%= link_to 'Edit', edit_person_path(person) %></button>
-                    <button><%= link_to 'Delete', person, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+
+                    <% if user_signed_in? %>
+                      <button><%= link_to 'Edit', edit_person_path(person) %></button>
+                      <button><%= link_to 'Delete', person, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                    <% end %>
                   </div>
                 </div>
               </div>

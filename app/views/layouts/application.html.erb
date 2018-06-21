@@ -58,6 +58,7 @@
 	    			</div>
 	    		</div>
 		    	</li>
+		    	<li><% if user_signed_in? %><%= link_to "Log Out", destroy_user_session_path, method: :delete %><% end %></li>
 		    <li class="socials">
 		    	<%= link_to image_tag("socials/fb_wh.svg"), "https://www.facebook.com/glitterboxibiza/" %>
 		    	<%= link_to image_tag("socials/tw_wh.svg"), "https://twitter.com/glitterbox" %>
@@ -69,6 +70,15 @@
 		</nav>
 
 		<!-- NAVAGATION // -->
+
+		<% if notice %>
+			<p class="notice"><%= notice %></p>
+		<% end %>
+		
+		<% if alert %>
+			<p class="alert"><%= alert %></p>
+		<% end %>
+   	
 		
     <%= yield %>
 

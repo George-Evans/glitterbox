@@ -17,8 +17,11 @@
       	<h3><%= Radioshow.first.episode %></h3>
       	<h4>Hosted by Melvo Baptiste</h4>
         <p class="contains-test"><%= simple_format(Radioshow.first.description) %></p>
-        <button class="listen"><%= link_to "Listen Now", "https://soundcloud.com/glitterboxibiza/glitterbox-radio-show-045-w-brian-tappert"%></button>
-        <button class="listen"><%= link_to 'Edit', edit_radioshow_path(Radioshow.first) %></button>
+
+        <% if user_signed_in? %>
+          <button class="listen"><%= link_to "Listen Now", "https://soundcloud.com/glitterboxibiza/glitterbox-radio-show-045-w-brian-tappert"%></button>
+          <button class="listen"><%= link_to 'Edit', edit_radioshow_path(Radioshow.first) %></button>
+        <% end %>
         
         <div class="socials music-socials mob-hide">
 					<h3>Follow Us</h3>
@@ -47,10 +50,13 @@
 				</div>
 			<% end %>
 
-			<div class="col-xs-12 col-sm-6 col-md-4 single match">
-				<%= link_to image_tag("black.png", class: "img-responsive", style: "width:100%;"), new_album_path %>
-				<span class="add"><span class="plus">+</span><br>New Album</span>
-			</div>
+      <% if user_signed_in? %>
+        <div class="col-xs-12 col-sm-6 col-md-4 single match">
+          <%= link_to image_tag("black.png", class: "img-responsive", style: "width:100%;"), new_album_path %>
+          <span class="add"><span class="plus">+</span><br>New Album</span>
+        </div>
+      <% end %>
+			
 
 
 		</div><!-- row // -->
@@ -85,8 +91,10 @@
 						            <% if album.vinyl_buy_url != "" %>
 						              <button><%= link_to album.vinyl_button_text, album.vinyl_buy_url %></button>
 						            <% end %>
-						            <button><%= link_to 'Edit', edit_album_path(album) %></button>
-						            <button><%= link_to 'Delete', album, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                        <% if user_signed_in? %>
+						              <button><%= link_to 'Edit', edit_album_path(album) %></button>
+						              <button><%= link_to 'Delete', album, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                        <% end %>
 						          </div>               
                   </div>
                 </div>
@@ -126,10 +134,12 @@
 				</div>
 			<% end %>
 
-			<div class="col-xs-6 col-md-4 col-lg-3 single match">
-				<%= link_to image_tag("black.png", class: "img-responsive", style: "width:100%;"), new_single_path %>
-				<span class="add"><span class="plus">+</span><br>New Single</span>
-			</div>
+      <% if user_signed_in? %>
+  			<div class="col-xs-6 col-md-4 col-lg-3 single match">
+  				<%= link_to image_tag("black.png", class: "img-responsive", style: "width:100%;"), new_single_path %>
+  				<span class="add"><span class="plus">+</span><br>New Single</span>
+  			</div>
+      <% end %>
 
 		</div><!-- row // -->
 		<!-- Thumbnails // -->
@@ -161,8 +171,10 @@
 					            <% if single.vinyl_buy_url != "" %>
 					              <button><%= link_to single.vinyl_button_text, single.vinyl_buy_url %></button>
 					            <% end %>
-					            <button><%= link_to 'Edit', edit_single_path(single) %></button>
-					            <button><%= link_to 'Delete', single, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                      <% if user_signed_in? %>
+					             <button><%= link_to 'Edit', edit_single_path(single) %></button>
+					             <button><%= link_to 'Delete', single, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                     <% end %>
 					          </div>               
                   </div>
                 </div>

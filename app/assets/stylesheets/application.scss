@@ -95,6 +95,13 @@ button.null {
   background-color: #555;
 }
 
+.notice,
+.alert {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
 /*FORMS*/
 
 .edit-form {
@@ -128,6 +135,12 @@ select#event_date_1i,
 select#event_date_2i,
 select#event_date_3i {
   width: 32.5%;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  width: auto !important;
+  display: inline;
+  margin-right: 4px;
 }
 
 /*HOMEPAGE*/
