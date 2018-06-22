@@ -25,7 +25,7 @@ class PersonUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process resize_to_fit: [1140, 1140]
+  process resize_to_fill: [1140, 1140]
   #
   # def scale(width, height)
   #   # do something
@@ -33,7 +33,7 @@ class PersonUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process resize_to_fit: [376, 376]
+    process resize_to_fill: [376, 376]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

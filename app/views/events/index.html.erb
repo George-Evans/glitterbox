@@ -14,8 +14,7 @@
             <%= image_tag(event.image_url, class: "img-responsive") %>
             <h2>
               <% if event.event_name? %><%= event.event_name %><br><% end %>
-              <%= event.venue if event.venue? %>
-              <% if event.venue? && event.location? %>, <% end %>
+              <%= event.venue if event.venue? %><% if event.venue? && event.location? %>, <% end %>
               <%= event.location if event.location? %>
               <% if event.venue? || event.location? %><br><% end %>
               <p><%= event.date.strftime("%A %d %B") %></p>
