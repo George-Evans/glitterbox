@@ -11,7 +11,7 @@
 
       <% @people.each_with_index do |person, index| %>
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 person">
-          <div class="artist-img">
+          <div class="artist-img placeholder-square">
             <%= link_to image_tag(person.image_url, class: "img-responsive"), "#lightbox", data: { toggle: "modal", slide_to: index} %>
             <span class="name"><%= person.name %></span>
           </div>

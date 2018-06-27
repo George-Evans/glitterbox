@@ -10,7 +10,9 @@
 
 		<div class="row">
 			<div class="col-sm-12 col-md-6 music-img match">
-				<%= image_tag(Radioshow.first.image_url, class: "img-responsive") %>
+        <div class="placeholder-square">
+          <%= image_tag(Radioshow.first.image_url, class: "img-responsive") %>
+        </div>
 			</div>
       <div class="col-sm-12 col-md-6 modal-info match" id="radio_match">
       	<h2><%= Radioshow.first.title %></h2>
@@ -46,7 +48,9 @@
 
 			<% @albums.each_with_index do |album, index| %>
 				<div class="col-xs-12 col-sm-6 col-md-4 single match">
-					<%= link_to image_tag(album.image_url.thumb, class: "img-responsive"), "#lightbox", data: { toggle: "modal", slide_to: index} %>
+          <div class="placeholder-square">
+					 <%= link_to image_tag(album.image_url.thumb, class: "img-responsive"), "#lightbox", data: { toggle: "modal", slide_to: index} %>
+          </div>
 				</div>
 			<% end %>
 
@@ -130,7 +134,9 @@
 
 			<% @singles.each_with_index do |single, index| %>
 				<div class="col-xs-6 col-md-4 col-lg-3 single match">
-					<%= link_to image_tag(single.image_url.thumb, class: "img-responsive"), "#lightbox-singles", data: { toggle: "modal", slide_to: index} %>
+          <div class="placeholder-square">
+					 <%= link_to image_tag(single.image_url.thumb, class: "img-responsive"), "#lightbox-singles", data: { toggle: "modal", slide_to: index} %>
+          </div>
 				</div>
 			<% end %>
 

@@ -54,4 +54,8 @@ $(document).on("turbolinks:load", function() {
 	    });
     });
 
+    // Page Fade In
+    $('img').css('display', 'none');
+	$('img').fadeIn(600);
+
 });

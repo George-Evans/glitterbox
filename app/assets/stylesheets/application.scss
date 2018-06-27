@@ -12,6 +12,7 @@
  *
  */
 
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -163,6 +164,13 @@ a:focus {
   outline: none !important;
 }
 
+.placeholder-square {
+  position: relative;
+  height: 0;
+  padding-bottom: 100%;
+  background-color: #000;
+}
+
 
 /*HOMEPAGE VIDEO*/
 
@@ -182,12 +190,13 @@ a:focus {
 }
 
 .hero-img {
+  position: relative;
   height: 80vh;
   background-attachment: scroll;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  overflow: visible; 
+  overflow: hidden; 
 }
 
 
@@ -525,10 +534,6 @@ span.sub {
   }
 
   /*HOVER OVER*/
-
-  .artist-img {
-    background-color: #000;
-  }
 
   .artist-img img:hover {
   opacity: 0.4;

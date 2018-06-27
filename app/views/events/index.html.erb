@@ -11,7 +11,10 @@
         <% if event.date >= Date.today %>
         <!-- // EVENT BLOCK -->
           <div class="col-xs-6 col-md-4 col-lg-3 event match">
-            <%= image_tag(event.image_url, class: "img-responsive") %>
+            <div class="placeholder-square">
+              <%= image_tag(event.image_url, class: "img-responsive") %>
+            </div>
+            
             <h2>
               <% if event.event_name? %><%= event.event_name %><br><% end %>
               <%= event.venue if event.venue? %><% if event.venue? && event.location? %>, <% end %>
