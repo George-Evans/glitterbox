@@ -37,11 +37,17 @@
 	    				
 	    				<!-- Begin MailChimp Signup Form -->
 								<div id="mc_embed_signup">
-								<form action="https://defected.us16.list-manage.com/subscribe/post?u=fbc5a1355d6ac8c81527c6b12&amp;id=41d849d537" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+								<form action="https://defected.com/croatia-update/mailchimp.php?" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 								  <div id="mc_embed_signup_scroll">
 									
 									<div class="mc-field-group">
 										<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="email address">
+									</div>
+									<div class="mc-field-group input-group hide">
+									    <ul>
+									    	<li><input type="checkbox" value="64" name="group[1473][64]" id="mce-group[1473]-1473-0" checked><label for="mce-group[1473]-1473-0">Newsletter</label></li>
+												<li><input type="checkbox" value="256" name="group[1473][256]" id="mce-group[1473]-1473-1"><label for="mce-group[1473]-1473-1">Events</label></li>
+										</ul>
 									</div>
 									<div id="mce-responses" class="clear">
 										<div class="response" id="mce-error-response" style="display:none"></div>
@@ -50,6 +56,7 @@
 								    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_fbc5a1355d6ac8c81527c6b12_f4ce0b8e52" tabindex="-1" value=""></div>
 								    <div class="clear"><input type="submit" value="SUBMIT" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
 								    </div>
+								    <input type="hidden" name="list_id" id="list_id" value="d25dc9cbc6" />
 								</form>
 								</div>
 								<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
@@ -82,7 +89,7 @@
 		
     <%= yield %>
 
-    
+
 
     <footer class="footer">
 				<%= image_tag("gb_logo.svg") %><span>&copy;</span> Glitterbox 2018
