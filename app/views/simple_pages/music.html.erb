@@ -19,9 +19,9 @@
       	<h3><%= Radioshow.first.episode %></h3>
       	<h4>Hosted by Melvo Baptiste</h4>
         <p class="contains-test"><%= simple_format(Radioshow.first.description) %></p>
+        <button class="listen"><%= link_to "Listen Now", Radioshow.first.listen_url %></button>
 
         <% if user_signed_in? %>
-          <button class="listen"><%= link_to "Listen Now", "https://soundcloud.com/glitterboxibiza/glitterbox-radio-show-045-w-brian-tappert"%></button>
           <button class="listen"><%= link_to 'Edit', edit_radioshow_path(Radioshow.first) %></button>
         <% end %>
         
