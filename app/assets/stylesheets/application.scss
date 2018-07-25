@@ -180,8 +180,9 @@ a:focus {
 
 .video-overlay {
 	position: absolute;
-	width: 70%;
-	top: 40%;
+  height: 100%;
+	width: auto;
+	top: 50%;
 	left: 50%;
 	-ms-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translate(-50%,-50%);
@@ -732,57 +733,7 @@ h4 {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-/*Medium devices (tablets, less than 992px)*/
-@media (max-width: 991px) {
 
-	/*MODALS*/
-
-	.modal-img,
-	.modal-info {
-		padding-left: 5px;
-		padding-right: 5px;
-	}
-
-	.modal-content,
-	.albums,
-	.singles,
-	.radio-show {
-		width: 90%;
-	}
-
-	.modal-info {
-		padding-top: 25px;
-		padding-bottom: 45px;
-	}
-
-	.close {
-		color: #fff;
-		top: -4px;
-		right: 8px;
-	}
-
-	.close:hover {
-		color: #fff;
-	}
-
-	.glyphicon-triangle-right,
-  .glyphicon-triangle-left {
-    top: 330px;
-  }
-
-  .mob-hide {
-		display: none;
-	}
-
-	.mob-show {
-		display: block;
-	}
-
-	.video-overlay {
-		width: 80%;
-	}
-
-}
 
 
 /*Extra large devices (large desktops)*/
@@ -810,52 +761,48 @@ h4 {
 /*Medium devices (tablets, less than 992px)*/
 @media (max-width: 991px) {
 
-	/*MODALS*/
+  /*MODALS*/
 
-	.modal-img,
-	.modal-info {
-		padding-left: 5px;
-		padding-right: 5px;
-	}
+  .modal-img,
+  .modal-info {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 
-	.modal-content,
-	.albums,
-	.singles,
-	.radio-show {
-		width: 90%;
-	}
+  .modal-content,
+  .albums,
+  .singles,
+  .radio-show {
+    width: 90%;
+  }
 
-	.modal-info {
-		padding-top: 25px;
-		padding-bottom: 45px;
-	}
+  .modal-info {
+    padding-top: 25px;
+    padding-bottom: 45px;
+  }
 
-	.close {
-		color: #fff;
-		top: -4px;
-		right: 8px;
-	}
+  .close {
+    color: #fff;
+    top: -4px;
+    right: 8px;
+  }
 
-	.close:hover {
-		color: #fff;
-	}
+  .close:hover {
+    color: #fff;
+  }
 
-	.glyphicon-triangle-right,
+  .glyphicon-triangle-right,
   .glyphicon-triangle-left {
     top: 330px;
   }
 
   .mob-hide {
-		display: none;
-	}
+    display: none;
+  }
 
-	.mob-show {
-		display: block;
-	}
-
-	.video-overlay {
-		width: 80%;
-	}
+  .mob-show {
+    display: block;
+  }
 
 }
 
@@ -863,9 +810,6 @@ h4 {
 /*Small devices (landscape phones, less than 768px)*/
 @media (max-width: 767px) { 
 
-	.video-overlay {
-		width: 70%;
-	}
 
 
 
@@ -883,16 +827,19 @@ h4 {
 		padding: 100px 0;
 	}
 
-	.video-overlay {
-		width: 100%;
-	}
-
 	.brand {
 		top: 15px;
     left: 14px;
     width: 70px;
 	}
 
+
+  /*HOMEPAGE*/
+
+  .video-overlay {
+    height: auto;
+    width: 100%;
+  }
 
 	/*NAV*/
 
