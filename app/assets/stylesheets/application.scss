@@ -16,10 +16,33 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/*ITC Serif Gothic Font Import*/
+
+@font-face{
+  font-family:"ITC Serif Gothic W01 Light";
+  src:font-url("b48153ff-91ec-4a5e-984c-f18f2131fdcd.eot?#iefix");
+  src:font-url("b48153ff-91ec-4a5e-984c-f18f2131fdcd.eot?#iefix") format("eot"),font-url("0bb0fed2-c048-479d-b066-6e827220acfd.woff2") format("woff2"),font-url("947a585d-09d8-4c06-9210-ad3c83d2a5c3.woff") format("woff"),font-url("7db29c7f-eca8-44ad-a1a9-b67084e525e9.ttf") format("truetype");
+}
+@font-face{
+  font-family:"ITC Serif Gothic W01 Regular";
+  src:font-url("b43886e2-e680-4298-a1d3-04a98e443c58.eot?#iefix");
+  src:font-url("b43886e2-e680-4298-a1d3-04a98e443c58.eot?#iefix") format("eot"),font-url("8267519e-38e1-42b7-b339-a79d3cde5002.woff2") format("woff2"),font-url("606558f4-4199-4bb9-ab0b-4dd3f367aadf.woff") format("woff"),font-url("137f2c49-985f-452d-b750-3add9d73c43b.ttf") format("truetype");
+}
+@font-face{
+  font-family:"ITC Serif Gothic W01 Bold";
+  src:font-url("8a93a51e-d42c-4af6-820d-916a3af90843.eot?#iefix");
+  src:font-url("8a93a51e-d42c-4af6-820d-916a3af90843.eot?#iefix") format("eot"),font-url("00cca847-1c2d-4f4f-8f48-2aa716baf319.woff2") format("woff2"),font-url("bfc6196d-ff5b-4479-bee4-2fb7ea160473.woff") format("woff"),font-url("2c63e36c-a575-4dc4-8474-6f85d3907f11.ttf") format("truetype");
+}
+@font-face{
+  font-family:"ITC Serif Gothic W01 Heavy";
+  src:font-url("1c9817e8-6c4f-480e-9999-821b4ab1d758.eot?#iefix");
+  src:font-url("1c9817e8-6c4f-480e-9999-821b4ab1d758.eot?#iefix") format("eot"),font-url("b8981b27-2dd0-4731-88f9-52738a42cb19.woff2") format("woff2"),font-url("536ef3e6-82f2-458f-b5bb-e3401fe9046f.woff") format("woff"),font-url("eccf0052-e433-427e-8256-6fe092957d93.ttf") format("truetype");
+}
+
 body {
   color: #000;
   background-color: #000;
-  font-family: "ITC Serif Gothic W05 Regular", Georgia, "Times New Roman", serif;
+  font-family: "ITC Serif Gothic W01 Regular", Georgia, "Times New Roman", serif;
   font-size: 150%;
   text-align: center;
   margin: 0;
@@ -290,7 +313,7 @@ body input ~ nav > ul > li > a {
   text-decoration: none;
   text-transform: uppercase;
   color: #fff;
-  font-family: "ITC Serif Gothic W03 Heavy", Georgia, "Times New Roman", serif;
+  font-family: "ITC Serif Gothic W01 Heavy", Georgia, "Times New Roman", serif;
   font-size: 5em;
   line-height: 1.3em;
   display: block;
@@ -343,7 +366,7 @@ button:focus {
 
 #mc_embed_signup input#mc-embedded-subscribe {
   padding: 10px;
-  font-family: "ITC Serif Gothic W03 Heavy", Georgia, "Times New Roman", serif;
+  font-family: "ITC Serif Gothic W01 Heavy", Georgia, "Times New Roman", serif;
   font-size: 1.5em;
   color: #fff;
   background-color: #000;
@@ -416,7 +439,7 @@ button:focus {
 span.sub {
   font-size: 0.5em;
   line-height: 0.5em;
-  font-family: "ITC Serif Gothic W03 Bold", Georgia, "Times New Roman", serif;
+  font-family: "ITC Serif Gothic W01 Bold", Georgia, "Times New Roman", serif;
 }
 
 
@@ -492,7 +515,7 @@ span.sub {
     font-size: 3.5em;
     opacity: 1;
     font-weight: normal;
-    font-family: "ITC Serif Gothic W05 Light", Georgia, "Times New Roman", serif;
+    font-family: "ITC Serif Gothic W01 Light", Georgia, "Times New Roman", serif;
     z-index: 1;
     text-shadow: none;
   }
@@ -552,7 +575,7 @@ span.sub {
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%, -50%);
   color: #fff !important;
-  font-family: "ITC Serif Gothic W03 Bold", Georgia, "Times New Roman", serif;
+  font-family: "ITC Serif Gothic W01 Bold", Georgia, "Times New Roman", serif;
   font-size: 22px;
   font-style: normal;
   font-weight: 300;
@@ -652,7 +675,7 @@ ul {
 h1, 
 h2, 
 .event ul {
-  font-family: "ITC Serif Gothic W03 Heavy", Georgia, "Times New Roman", serif;
+  font-family: "ITC Serif Gothic W01 Heavy", Georgia, "Times New Roman", serif;
 }
 
 h1 {
@@ -682,7 +705,7 @@ h2 > p {
 h3,
 h4,
 .event h2 {
-  font-family: "ITC Serif Gothic W03 Bold", Georgia, "Times New Roman", serif;
+  font-family: "ITC Serif Gothic W01 Bold", Georgia, "Times New Roman", serif;
 }
 
 .event h2 {
@@ -716,11 +739,11 @@ h4 {
 }
 
 .modal-info .q {
-  font-family: "ITC Serif Gothic W03 Heavy", Georgia, "Times New Roman", serif;
+  font-family: "ITC Serif Gothic W01 Heavy", Georgia, "Times New Roman", serif;
 }
 
 .more-link > a {
-  font-family: "ITC Serif Gothic W03 Bold", Georgia, "Times New Roman", serif;
+  font-family: "ITC Serif Gothic W01 Bold", Georgia, "Times New Roman", serif;
   color: #000;
   border-bottom: 1px dotted #000;
 }

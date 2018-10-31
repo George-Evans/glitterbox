@@ -2,8 +2,18 @@
 <html>
   <head>
   	<title>Glitterbox</title>
- 		<%= stylesheet_link_tag 'application', 'https://fast.fonts.net/cssapi/f935a532-7dca-4a2c-8c94-cedc41b5d56d.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+ 		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  	<script type="text/javascript">
+			var MTIProjectId='c6a68709-21f1-4972-92bb-c5d0935566bd';
+			 (function() {
+			        var mtiTracking = document.createElement('script');
+			        mtiTracking.type='text/javascript';
+			        mtiTracking.async='true';
+			         mtiTracking.src='assets/mtiFontTrackingCode.js';
+			        (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild( mtiTracking );
+			   })();
+			</script>
   	<%= favicon_link_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="turbolinks-visit-control" content="reload">
