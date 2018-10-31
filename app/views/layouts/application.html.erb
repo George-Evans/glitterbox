@@ -10,7 +10,7 @@
 			        var mtiTracking = document.createElement('script');
 			        mtiTracking.type='text/javascript';
 			        mtiTracking.async='true';
-			         mtiTracking.src='assets/mtiFontTrackingCode.js';
+			         mtiTracking.src='<%= asset_path("mtiFontTrackingCode.js") %>';
 			        (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild( mtiTracking );
 			   })();
 			</script>
